@@ -5,7 +5,7 @@
 </p>
 
 <div class="list-group">
-   <a href="#/edit/{{project.$id}}" class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'name'">
+   <a href="#/edit/{{project.$id}}" class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'title'">
       <a href="./projects/{{project.folder}}" class="list-group-item-heading"><span class="glyphicon glyphicon-folder-open"></span><h4>{{project.title}}</h4></a>
       <p class="list-group-item-text" style="white-space: pre-wrap;">{{project.description}}</p>
    </a>
