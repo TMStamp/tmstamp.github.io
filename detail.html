@@ -1,19 +1,25 @@
 <form name="myForm" role="form">
-  <div class="form-group" ng-class="{error: myForm.title.$invalid && !myForm.title.$pristine}">
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputSuccess2">Input with success</label>
+  <input type="text" class="form-control" id="inputSuccess2">
+  <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+</div>
+
+  <div class="form-group" ng-class="{'has-error has-feedback': myForm.title.$invalid && !myForm.title.$pristine}">
     <label for="inputTitle">Project Title</label>
     <input id="inputTitle" class="form-control" type="text" name="title" placeholder="Enter Title" ng-model="project.title" required>
-    <span ng-show="myForm.title.$error.required && !myForm.title.$pristine" class="help-inline">Required {{myForm.title.$pristine}}</span>
+    <span ng-show="myForm.title.$error.required && !myForm.title.$pristine" class="text-danger">Required {{myForm.title.$pristine}}</span>
   </div>
 
-  <div class="form-group" ng-class="{error: myForm.folder.$invalid && !myForm.folder.$pristine}">
+  <div class="form-group" ng-class="{'has-error has-feedback': myForm.folder.$invalid && !myForm.folder.$pristine}">
     <label for="inputFolder">Project Folder</label>
     <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" ng-pattern="/\s/" required>
-    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">Required {{myForm.folder.$pristine}}</span>
-    <span ng-show="!myForm.folder.$pristine && myForm.folder.$error.pattern" class="help-inline">Invalid folder name (must not contain any whitespace characters)</span>
+    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="text-danger">Required {{myForm.folder.$pristine}}</span>
+    <span ng-show="!myForm.folder.$error.pattern && !myForm.folder.$pristine" class="text-danger">Must not contain any spaces or tabs</span>
   </div>
 
   <div class="form-group">
-	<label for="inputDesc">Project Summary</label>
+	<label for="inputDesc">Project Description</label>
 	<textarea id="inputDesc" class="form-control" name="description" ng-model="project.description" rows="3" placeholder="Enter Description" required></textarea>
   </div>
 
