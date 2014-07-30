@@ -9,14 +9,8 @@
     <label for="inputFolder">Project Folder</label>
     <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" required>
     <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">Required {{myForm.folder.$pristine}}</span>
+    <span ng-show="/\s/.test(myForm.folder)" class="help-inline">Invalid folder name</span>
   </div>
-
-    <label>Website</label>
-    <input type="url" name="site" ng-model="project.folder" required>
-    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">
-        Required</span>
-    <span ng-show="myForm.folder.$error.url" class="help-inline">
-        Not a URL</span>
 
   <div class="form-group">
 	<label for="inputDesc">Project Summary</label>
