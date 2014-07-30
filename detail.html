@@ -1,0 +1,33 @@
+<form name="myForm" role="form">
+  <div class="form-group" ng-class="{error: myForm.title.$invalid && !myForm.title.$pristine}">
+    <label for="inputTitle">Project Title</label>
+    <input id="inputTitle" class="form-control" type="text" name="title" placeholder="Enter Title" ng-model="project.title" required>
+    <span ng-show="myForm.title.$error.required && !myForm.title.$pristine" class="help-inline">Required {{myForm.title.$pristine}}</span>
+  </div>
+
+  <div class="form-group" ng-class="{error: myForm.folder.$invalid && !myForm.folder.$pristine}">
+    <label for="inputFolder">Project Folder</label>
+    <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" required>
+    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">Required {{myForm.folder.$pristine}}</span>
+  </div>
+
+    <label>Website</label>
+    <input type="url" name="site" ng-model="project.folder" required>
+    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">
+        Required</span>
+    <span ng-show="myForm.folder.$error.url" class="help-inline">
+        Not a URL</span>
+
+  <div class="form-group">
+	<label for="inputDesc">Project Summary</label>
+	<textarea id="inputDesc" class="form-control" name="description" ng-model="project.description" rows="3" placeholder="Enter Description" required></textarea>
+  </div>
+
+  <div class="form-group">
+	<a href="#/" class="btn">Cancel</a>
+	<button ng-click="save()" ng-disabled="myForm.$invalid"
+            class="btn btn-primary">Save</button>
+	<button ng-click="destroy()"
+			ng-show="project.$remove" class="btn btn-danger">Delete</button>
+	</div>
+</form>
