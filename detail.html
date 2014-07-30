@@ -7,9 +7,9 @@
 
   <div class="form-group" ng-class="{error: myForm.folder.$invalid && !myForm.folder.$pristine}">
     <label for="inputFolder">Project Folder</label>
-    <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" required>
-    <div ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="alert alert-danger">Required {{myForm.folder.$pristine}}</div>
-    <div ng-show="myForm.folder.length > 0" class="alert alert-danger">Invalid folder name</div>
+    <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" ng-pattern="/\s/" required>
+    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-inline">Required {{myForm.folder.$pristine}}</span>
+    <span ng-show="!myForm.folder.$pristine && myForm.folder.$error.pattern" class="help-inline">Invalid folder name (must not contain any whitespace characters)</span>
   </div>
 
   <div class="form-group">
