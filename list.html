@@ -5,8 +5,9 @@
 </p>
 
 <div class="list-group">
-   <a href="#/edit/{{project.$id}}" class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'title'">
-      <h4 ng-href="./projects/{{project.folder}}/"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;{{project.title}}</h4>
+   <a ng-href="#/edit/{{project.$id}}" class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'title'">
+       <a ng-href="./projects/{{project.folder}}/"><h4><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;{{project.title}}</h4></a>
+<!--      <h4 class="list-group-item-heading" ><a href="./projects/{{project.folder}}/" ><span class="glyphicon glyphicon-folder-open"></span>&nbsp;{{project.title}}</h4> -->
       <p class="list-group-item-text" style="white-space: pre-wrap;">{{project.description}}</p>
    </a>
 </div>
