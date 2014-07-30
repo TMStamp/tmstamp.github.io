@@ -9,7 +9,7 @@
     <label for="inputFolder">Project Folder</label>
     <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" required>
     <div ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="alert alert-danger">Required {{myForm.folder.$pristine}}</div>
-    <div ng-show="myForm.folder.length > 0 && /\s/.test(myForm.folder)" class="alert alert-danger">Invalid folder name</div>
+    <div ng-show="myForm.folder.length > 0" class="alert alert-danger">Invalid folder name</div>
   </div>
 
   <div class="form-group">
