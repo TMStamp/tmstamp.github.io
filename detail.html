@@ -7,9 +7,8 @@
 
   <div class="form-group" ng-class="{'has-error has-feedback': myForm.folder.$invalid && !myForm.folder.$pristine}">
     <label for="inputFolder">Project Folder</label>
-    <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" ng-pattern="/^\S+$/" required>
-    <span ng-show="myForm.folder.$error.required && !myForm.folder.$pristine" class="help-block text-danger">Required</span>
-    <span ng-show="!myForm.folder.$error.pattern && !myForm.folder.$pristine" class="help-block text-danger">Must not contain any spaces or tabs</span>
+    <input id="inputFolder" class="form-control" type="text" name="folder" placeholder="Enter Folder Name" ng-model="project.folder" ng-pattern="/^\S+$/">
+    <span ng-show="myForm.folder.$error.pattern && !myForm.folder.$pristine" class="help-block text-danger">Required and must not contain any spaces or tabs</span>
   </div>
 
   <div class="form-group">
