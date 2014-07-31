@@ -4,11 +4,11 @@
    </a>
 </p>
 
-<div class="list-group">
-   <div ng-click="#/edit/{{project.$id}}" class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'title'">
-       <h4 class="list-group-item-heading"><button ng-href="/projects/{{project.folder}}/" class="btn btn-default"><span class="glyphicon glyphicon-folder-open"></span></a>&nbsp;&nbsp;{{project.title}}</h4>
+<ul class="list-group">
+   <li class="list-group-item" ng-repeat="project in projects | orderByPriority | orderBy:'title'">
+      <h4 class="list-group-item-heading"><a ng-href="/projects/{{project.folder}}/" class="btn btn-default"><span class="glyphicon glyphicon-folder-open"></span></a>&nbsp;&nbsp;{{project.title}}</h4>
 <!--      <h4 class="list-group-item-heading" ><a href="./projects/{{project.folder}}/" ><span class="glyphicon glyphicon-folder-open"></span>&nbsp;{{project.title}}</h4> -->
       <p class="list-group-item-text" style="white-space: pre-wrap;">{{project.description}}</p>
-   </div>
-</div>
+   </li>
+</ul>
 
