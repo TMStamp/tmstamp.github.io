@@ -1,6 +1,6 @@
 angular.module('collection', ['ngRoute', 'firebase'])
  
-.value('fbURL', 'https://scorching-fire-3850.firebaseio.com/')
+.value('fbURL', 'https://scorching-fire-3850.firebaseio.com/potluck')
  
 .factory('Collection', function($firebase, fbURL) {
   return $firebase(new Firebase(fbURL));
