@@ -1,6 +1,6 @@
 angular.module('myProjects', ['ngRoute', 'firebase'])
 
-.value('fbURL', 'https://scorching-fire-3850.firebaseio.com/projects/')
+.value('fbURL', 'https://tmstamp-dev0.firebaseio.com/projects/')
  
 .factory('Projects', function($firebase, fbURL) {
   return $firebase(new Firebase(fbURL));
