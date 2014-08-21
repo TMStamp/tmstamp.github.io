@@ -16,7 +16,7 @@
       <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
         Button dropdown <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" role="menu" ng-init="projects=[{folder: "potluck", title: "Potluck Party"}]">
+      <ul class="dropdown-menu" role="menu" ng-init="projects=[{folder: 'potluck', title: 'Potluck Party'}]">
         <li ng-repeat="project in projects"><a ng-href="/projects/{{project.folder}}">{{project.title}}</a></li>
         <li class="divider"></li>
         <li><a ng-href="//github.com/TMStamp/tmstamp.github.io">Repository</a></li>
