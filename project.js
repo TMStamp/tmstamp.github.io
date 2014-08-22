@@ -1,4 +1,4 @@
-angular.module('myProjects', ['ngRoute', 'firebase'])
+angular.module('myProjects', ['ui.bootstrap', 'ngRoute', 'firebase'])
 
 .value('fbURL', 'https://tmstamp-dev0.firebaseio.com/projects/')
  
