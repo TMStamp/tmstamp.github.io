@@ -63,19 +63,6 @@
 
 		<div ng-view></div>
 	</div>
-
-    <!-- Single button -->
-    <div class="btn-group" dropdown is-open="false">
-      <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
-        Button dropdown <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu" ng-init="list=[{folder: 'potluck', title: 'Potluck Party'}]">
-        <li ng-repeat="i in lists"><a ng-href="/projects/{{i.folder}}">{{i.title}}</a></li>
-        <li class="divider"></li>
-        <li><a ng-href="//github.com/TMStamp/tmstamp.github.io">Repository</a></li>
-      </ul>
-    </div>
-
 </body>
   
 </html>
