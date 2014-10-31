@@ -1,65 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery Mobile Demos</title>
-  <link rel="shortcut icon" href="favicon.ico">
+  <title>Simple Site Template</title>
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="/lib/open_sans_fonts.css">
+  <link rel="stylesheet" href="/lib/jquery.mobile-1.4.5.min.css" />
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script></head>
-<body>
-<div data-role="page" class="jqm-demos jqm-home">
 
-  <div data-role="header" class="jqm-header">
-    <h2><img src="assets/header-object.png" alt="Hockey Addict"></h2>
-    <p>Version <span class="jqm-version"></span></p>
-    <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-    <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+<!-- 
+  <script src="../js/jquery.js"></script>
+  <script src="../_assets/js/index.js"></script>
+-->
+
+  <script src="/lib/jquery-1.11.1.min.js"></script>
+  <script src="/lib/jquery.mobile-1.4.5.min.js"></script>
+
+  <script id="panel-init">
+    $(function() {
+      $( "body>[data-role='panel']" ).panel();
+    });
+  </script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos" data-quicklinks="true">
+
+  <div data-role="header">
+    <h1>External panels</h1>
+    <a href="../panel/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
   </div><!-- /header -->
 
-  <div role="main" class="ui-content jqm-content">
-    <h1>Demos</h1>
-    <p><strong>jQuery Mobile is a touch-optimized HTML5 UI framework designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.</strong></p>
+  <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <img src="_assets/img/devices.png">
+    <h1>External Panels</h1>
 
-    <p>New to jQuery Mobile? Get started by reading this <a href="intro/" data-ajax="false">introduction</a>. For technical info, visit the <a href="http://api.jquerymobile.com" title="jQuery Mobile API documentation" target="_blank">API documentation</a>. Downloads and info about the project can be found on <a href="http://jquerymobile.com" title="jQuery Mobile web site" target="_blank">jquerymobile.com</a>.</p>
+    <p>The panels below are all located outside the page. Panels outside of a page must be initalized manually and will not be handled by auto init. Panels outside of pages will remain in the DOM (unless manually removed) as long as you use Ajax navigation, and can be opened or closed from any page.</p>
+
+    <p>Navigate to page 2 to see this behavior. The HTML document for page 2 doesn't contain panel markup, but you can still open the panels.</p>
+
+    <p><a href="page-b.html">Navigate to page 2</a></p>
+
+    <p><strong>Left</strong> panel examples</p>
+    <a href="#leftpanel3" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Overlay</a>
+    <a href="#leftpanel1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Reveal</a>
+    <a href="#leftpanel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Push</a>
+
+    <p><strong>Right</strong> panel examples</p>
+    <a href="#rightpanel3" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Overlay</a>
+    <a href="#rightpanel1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Reveal</a>
+    <a href="#rightpanel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Push</a>
 
   </div><!-- /content -->
 
-<div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
-<ul id="navBar" class="jqm-list ui-alt-icon ui-nodisc-icon">
-   <li data-filtertext="demos homepage" data-icon="home"><a href=".././" data-ajax="false">Home</a></li>
-   <li data-filtertext="introduction overview getting started"><a href="../intro/" data-ajax="false">Introduction</a></li>
-   <li data-filtertext="buttons button markup buttonmarkup method anchor link button element"><a href="../button-markup/" data-ajax="false">Buttons</a></li>
-   <li data-filtertext="form button widget input button submit reset"><a href="../button/" data-ajax="false">Button widget</a></li>
-   <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
-     <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
-       <a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
-           Checkboxradio widget<span class="ui-collapsible-heading-status"> click to expand contents</span>
-       </a>
-     </h3>
-     <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
-       <ul>
-         <li data-filtertext="form checkboxradio widget checkbox input checkboxes controlgroups"><a href="../checkboxradio-checkbox/" data-ajax="false">Checkboxes</a></li>
-         <li data-filtertext="form checkboxradio widget radio input radio buttons controlgroups"><a href="../checkboxradio-radio/" data-ajax="false">Radio buttons</a></li>
-       </ul>
-     </div>
-   </li>
-</ul></div><!-- /panel -->
-
-
-  <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
-    <p>jQuery Mobile Demos version <span class="jqm-version"></span></p>
-    <p>Copyright 2014 The jQuery Foundation</p>
-  </div><!-- /footer -->
-
 </div><!-- /page -->
 
-<script src="scripts/index.js"></script>
+  <div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-theme="a">
 
+        <h3>Left Panel: Reveal</h3>
+        <p>This panel is positioned on the left with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /leftpanel1 -->
+
+  <!-- leftpanel2  -->
+  <div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-theme="a">
+
+        <h3>Left Panel: Push</h3>
+        <p>This panel is positioned on the left with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /leftpanel2 -->
+
+  <!-- leftpanel3  -->
+  <div data-role="panel" id="leftpanel3" data-position="left" data-display="overlay" data-theme="a">
+
+        <h3>Left Panel: Overlay</h3>
+        <p>This panel is positioned on the left with the overlay display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /leftpanel3 -->
+
+  <!-- rightpanel1  -->
+  <div data-role="panel" id="rightpanel1" data-position="right" data-display="reveal" data-theme="b">
+
+        <h3>Right Panel: Reveal</h3>
+        <p>This panel is positioned on the right with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /rightpanel1 -->
+
+  <!-- rightpanel2  -->
+  <div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-theme="b">
+
+        <h3>Right Panel: Push</h3>
+        <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /rightpanel2 -->
+
+  <!-- rightpanel3  -->
+  <div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-theme="b">
+
+        <h3>Right Panel: Overlay</h3>
+        <p>This panel is positioned on the right with the overlay display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+  </div><!-- /rightpanel3 -->
 </body>
 </html>
