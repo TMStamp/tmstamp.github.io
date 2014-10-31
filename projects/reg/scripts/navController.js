@@ -1,6 +1,4 @@
 $('#navBar').live('pageshow',function(event){
-    
-    
     var serviceURL = 'service1.asmx/GetLankanList';
 
     $.ajax({            
