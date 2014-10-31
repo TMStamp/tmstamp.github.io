@@ -23,95 +23,110 @@
     });
   </script>
 </head>
+
 <body>
-<div data-role="page" class="jqm-demos" data-quicklinks="true">
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Panel responsive page">
 
-  <div data-role="header">
-    <h1>External panels</h1>
-    <a href="../panel/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
-  </div><!-- /header -->
+    <div data-role="header">
+        <h1>Panel responsive</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+    </div><!-- /header -->
 
-  <div role="main" class="ui-content jqm-content jqm-fullwidth">
+    <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <h1>External Panels</h1>
+      <h1>Panel responsive</h1>
 
-    <p>The panels below are all located outside the page. Panels outside of a page must be initalized manually and will not be handled by auto init. Panels outside of pages will remain in the DOM (unless manually removed) as long as you use Ajax navigation, and can be opened or closed from any page.</p>
+        <p>This is a typical page that has two buttons in the header bar that open panels. The left panel has the push display mode, the right panel reveal. To make this responsive, you can make the page re-flow at wider widths. This allows both the panel menu and page to be used together when more space is available. This behavior is controlled by CSS media queries. You can create a custom one for a specific breakpoint or use the breakpoint preset by adding the <code>class="ui-responsive-panel"</code> to the page container. We have added this class on this demo page. Note that when using the preset class, we also hide the dismiss layer on wider screens if the panel has the push display mode.</p>
 
-    <p>Navigate to page 2 to see this behavior. The HTML document for page 2 doesn't contain panel markup, but you can still open the panels.</p>
+    <div data-demo-html="#panel-responsive-page1"></div><!--/demo-html -->
 
-    <p><a href="page-b.html">Navigate to page 2</a></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-    <p><strong>Left</strong> panel examples</p>
-    <a href="#leftpanel3" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Overlay</a>
-    <a href="#leftpanel1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Reveal</a>
-    <a href="#leftpanel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Push</a>
-
-    <p><strong>Right</strong> panel examples</p>
-    <a href="#rightpanel3" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Overlay</a>
-    <a href="#rightpanel1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Reveal</a>
-    <a href="#rightpanel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Push</a>
+        <a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>
 
   </div><!-- /content -->
 
+  <div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+    <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#panel-responsive-page2">Accordion</a></li>
+                <li><a href="#panel-responsive-page2">Ajax Navigation</a></li>
+                <li><a href="#panel-responsive-page2">Autocomplete</a></li>
+                <li><a href="#panel-responsive-page2">Buttons</a></li>
+                <li><a href="#panel-responsive-page2">Checkboxes</a></li>
+                <li><a href="#panel-responsive-page2">Collapsibles</a></li>
+                <li><a href="#panel-responsive-page2">Controlgroup</a></li>
+                <li><a href="#panel-responsive-page2">Dialogs</a></li>
+                <li><a href="#panel-responsive-page2">Fixed toolbars</a></li>
+                <li><a href="#panel-responsive-page2">Flip switch toggle</a></li>
+                <li><a href="#panel-responsive-page2">Footer toolbar</a></li>
+                <li><a href="#panel-responsive-page2">Form elements</a></li>
+                <li><a href="#panel-responsive-page2">Grids</a></li>
+                <li><a href="#panel-responsive-page2">Header toolbar</a></li>
+                <li><a href="#panel-responsive-page2">Icons</a></li>
+                <li><a href="#panel-responsive-page2">Links</a></li>
+                <li><a href="#panel-responsive-page2">Listviews</a></li>
+                <li><a href="#panel-responsive-page2">Loader overlay</a></li>
+                <li><a href="#panel-responsive-page2">Navbar</a></li>
+                <li><a href="#panel-responsive-page2">Navbar, persistent</a></li>
+                <li><a href="#panel-responsive-page2">Pages</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">Popup</a></li>
+                <li><a href="#panel-responsive-page2">Radio buttons</a></li>
+                <li><a href="#panel-responsive-page2">Select</a></li>
+                <li><a href="#panel-responsive-page2">Slider, single</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">Text inputs & textarea</a></li>
+                <li><a href="#panel-responsive-page2">Transitions</a></li>
+    </ul>
+
+  </div><!-- /panel -->
+
+  <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form">
+
+        <form class="userform">
+
+          <h2>Login</h2>
+
+            <label for="name">Username:</label>
+            <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+      </div>
+        </form>
+
+  </div><!-- /panel -->
+
 </div><!-- /page -->
 
-  <div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-theme="a">
+<div data-role="page" id="panel-responsive-page2">
 
-        <h3>Left Panel: Reveal</h3>
-        <p>This panel is positioned on the left with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+    <div data-role="header">
+        <h1>Landing page</h1>
+    </div><!-- /header -->
 
-  </div><!-- /leftpanel1 -->
+    <div role="main" class="ui-content jqm-content">
 
-  <!-- leftpanel2  -->
-  <div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-theme="a">
+        <p>This is just a landing page.</p>
 
-        <h3>Left Panel: Push</h3>
-        <p>This panel is positioned on the left with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+        <a href="#panel-responsive-page1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini ui-icon-back ui-btn-icon-left">Back</a>
 
-  </div><!-- /leftpanel2 -->
+    </div><!-- /content -->
 
-  <!-- leftpanel3  -->
-  <div data-role="panel" id="leftpanel3" data-position="left" data-display="overlay" data-theme="a">
+</div><!-- /page -->
 
-        <h3>Left Panel: Overlay</h3>
-        <p>This panel is positioned on the left with the overlay display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
-
-  </div><!-- /leftpanel3 -->
-
-  <!-- rightpanel1  -->
-  <div data-role="panel" id="rightpanel1" data-position="right" data-display="reveal" data-theme="b">
-
-        <h3>Right Panel: Reveal</h3>
-        <p>This panel is positioned on the right with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
-
-  </div><!-- /rightpanel1 -->
-
-  <!-- rightpanel2  -->
-  <div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-theme="b">
-
-        <h3>Right Panel: Push</h3>
-        <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
-
-  </div><!-- /rightpanel2 -->
-
-  <!-- rightpanel3  -->
-  <div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-theme="b">
-
-        <h3>Right Panel: Overlay</h3>
-        <p>This panel is positioned on the right with the overlay display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
-
-  </div><!-- /rightpanel3 -->
 </body>
 </html>
