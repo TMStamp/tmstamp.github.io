@@ -1,4 +1,29 @@
-$('#navBar').live('pageshow',function(event){
+//$('#navBar').live('pageshow',function(event){
+
+function setMenu() {
+	var data = JSON.parse(navBarData);
+
+	if (data.menu === undefined) return;
+
+	menuItems = '<ul data-role="listview"><li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>';
+	$(data.menu.items).each(function() {
+		if(this.name && this.location) {
+      menuItems += '<li><a href="'+this.location+'">'+this.name+'</a></li>';
+		};
+  });
+  menuItems += '</ul>';
+
+  $('#nav-panel').html(menuItems);
+  $('#nav-panel ul').listview();
+}
+
+$(document).ready(function(){
+  setMenu();
+});
+
+
+
+/*
     var serviceURL = 'service1.asmx/GetLankanList';
 
     $.ajax({            
@@ -37,4 +62,5 @@ $('#navBar').live('pageshow',function(event){
     function errorFunc(){
         alert('error');
     }
-});
+*/
+//});
