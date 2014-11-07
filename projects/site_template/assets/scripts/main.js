@@ -2,6 +2,7 @@ var app = angular.module('templateSite', ['ui.bootstrap']);
 
 app.controller('MainCtrl', function($scope) {
     $scope.name = 'World';
+    $scope.isCollapsed = true;
 });
 
 app.controller('DropdownCtrl', function($scope) {
