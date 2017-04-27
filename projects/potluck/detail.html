@@ -12,7 +12,7 @@
 
   <div class="form-group" ng-class="{error: myForm.guest_count.$invalid && !myForm.guest_count.$pristine}">
     <label for="inputGuestCount"># Additional Guests</label>
-    <input id="inputGuestCount" class="form-control" type="text" name="guest_count" placeholder="Enter Count..." ng-model="item.guestCount" required>
+    <input id="inputGuestCount" class="form-control" type="number" min="0" max="5" name="guest_count" ng-model="item.guestCount" required>
     <span ng-show="myForm.guest_count.$error.required && !myForm.guest_count.$pristine" class="help-inline">Required {{myForm.guest_count.$pristine}}</span>
   </div>
 
