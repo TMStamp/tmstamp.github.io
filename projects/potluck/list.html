@@ -8,5 +8,6 @@
   <a href="#/edit/{{item.$id}}" class="list-group-item" ng-repeat="item in collection | orderByPriority | orderBy:'name'">
 	<h4 class="list-group-item-heading">{{item.name}}</h4>
 	<p class="list-group-item-text" style="white-space: pre-wrap;">{{item.description}}</p>
+  <p class="list-group-item-text" style="white-space: pre-wrap;">{{item.guestCount}}</p>
   </a>
 </div>
